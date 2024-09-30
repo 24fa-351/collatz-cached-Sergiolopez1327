@@ -18,12 +18,15 @@ unsigned long long collatz(unsigned long long num) {
 }
 
 unsigned long long collatz_cache_wrapper(Cache *cache, unsigned long long num) {
-    unsigned long long result = get_from_cache(cache, num);
-    if (result == 0) {
-        result = collatz(num);
-        add_to_cache(cache, num, result);
-        return result;
-    } else {
-        return result;
+    unsigned long long steps = get_from_cache(cache, num);
+    
+    if (steps != 0) {
+        return steps;
     }
+    
+   
+    steps = collatz(num);  
+    add_to_cache(cache, num, steps); 
+    
+    return steps;
 }

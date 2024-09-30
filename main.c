@@ -4,7 +4,7 @@
 #include <time.h>
 #include "cache.h"
 
-// Declare the collatz_cache_wrapper function
+
 unsigned long long collatz_cache_wrapper(Cache *cache, unsigned long long num);
 
 unsigned long long generate_random_numbers(unsigned long long min, unsigned long long max) {

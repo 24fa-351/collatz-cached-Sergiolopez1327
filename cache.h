@@ -9,7 +9,6 @@ typedef enum {
 typedef struct CacheNode {
     unsigned long long key;
     unsigned long long value;
-    unsigned long long frequency;
     unsigned long long node_order;
 } CacheNode;
 
